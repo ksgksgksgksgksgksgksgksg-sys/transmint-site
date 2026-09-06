@@ -14,6 +14,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
+  /* Selection wears the brand green (founder 09-07). #006d4b is the exact accent this site already
+     uses for links and the motto -- not a second green invented for this one job. The foreground is
+     pinned to #f7f7f7 rather than inherited, so a selection can never land as dark-on-dark: measured
+     5.8:1 against the green, above the 4.5 floor. */
+  ::selection{background:#006d4b;color:#f7f7f7}
+  ::-moz-selection{background:#006d4b;color:#f7f7f7}
   :root{color-scheme:dark}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:#060606;color:#e9ebe9;font-family:'Urbanist',system-ui,-apple-system,sans-serif;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;text-align:center}
