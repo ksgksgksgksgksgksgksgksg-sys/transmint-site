@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Transmint</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico?v=4" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=4">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png?v=4">
+<script>
+/* THE TRAILING SLASH TURNAROUND.
+   GitHub Pages has no redirect configuration -- no .htaccess, no _redirects, no header rules -- and its
+   only built-in rewrite is the one we are undoing: a directory-backed page makes /support 301 to
+   /support/. The pages are therefore published as root-level files (support.html -> /support), which
+   Pages serves with no redirect at all, and the directories are gone. Every trailing-slash URL now
+   misses and lands here, which is the single place a turnaround can still be made.
+   This runs before any body is parsed, and uses replace() so the slashed URL never enters history and
+   the back button cannot bounce you between the two forms. */
+(function(){try{
+  var p = location.pathname;
+  if (p.length > 1 && p.charAt(p.length-1) === '/') {
+    location.replace(p.replace(/\/+$/,'') + location.search + location.hash);
+  }
+}catch(e){}})();
+</script>
+<style>
+  :root{color-scheme:dark}
+  ::selection{background:#006d4b;color:#f7f7f7}
+  ::-moz-selection{background:#006d4b;color:#f7f7f7}
+  html,body{margin:0;height:100%;background:#070707;color:#f7f7f7;
+    font-family:Urbanist,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-weight:300}
+  main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px;text-align:center}
+  h1{margin:0;font-size:15px;font-weight:300;letter-spacing:.02em}
+  p{margin:0;font-size:13px;color:#8b8b8b}
+  a{color:#006d4b;text-decoration:none;border-bottom:1px solid rgba(0,109,75,.45);padding-bottom:1px;font-size:13px}
+</style>
+</head>
+<body>
+<main>
+  <h1>That page is not here.</h1>
+  <p>The address may have changed, or it never existed.</p>
+  <a href="/">Go to transmint.ai</a>
+</main>
+</body>
+</html>
